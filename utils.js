@@ -33,7 +33,7 @@ const paddingNum = (n) => {
 * @return {String} '?key1=val1?key2=val2...' 
 */
 const json2url = json => {
-  return '?' + Object.keys(json).map(key => `${key}=${json[key]}`).join(&)
+  return '?' + Object.keys(json).map(key => `${key}=${json[key]}`).join('&')
 }
 
 // check cellphone number
