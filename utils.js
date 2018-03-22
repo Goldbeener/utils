@@ -36,6 +36,21 @@ const json2url = json => {
   return '?' + Object.keys(json).map(key => `${key}=${json[key]}`).join('&')
 }
 
+// transform querystring to json when the url with '?'
+/*
+* @param {String} '?key1=val1?key2=val2...' 
+* @return {Object} 
+*/
+const url2json = qs => {
+  let result = {}
+  let temp = qs.substring(1).split('&')
+  for (let i =0; i < temp.length; i ++) {
+    let res = temp[i].split('=')
+    result[res[0]] = res[1]
+  }
+  return result
+}
+
 // check cellphone number
 // the number section 13 14 15 16 17 18
 /*
