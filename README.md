@@ -6,3 +6,4 @@ some utility functions
 + Json2url
 + Url2json
 + CheckCellphone
++ isArray

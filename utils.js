@@ -1,8 +1,8 @@
-// transform the time stamp to '2018.03.01 18:00:00'
-/*
-* @param {Number|String}
-* @return {String} '2018.03.01 18:00:00' 
-*/
+
+/** 
+ * @param {Number|String}
+ * @return {String}  transform the time stamp to '2018.03.01 18:00:00' 
+ */
 const formatTime = (stamp) => {
   const date = new Date(Number(stamp))
 
@@ -17,30 +17,28 @@ const formatTime = (stamp) => {
   return [y, m, d].map(paddingNum).join('.') + [h, M, s].map(paddingNum).join(':')
 }
 
-// padding with 0 if the nummber's length is less 1
-/*
-* @param {Number} 9
-* @return {String} '09' 
-*/
+
+/**
+ * @param {Number} 9
+ * @return {String} '09' padding with 0 if the nummber's length is less 1
+ */
 const paddingNum = (n) => {
   n = n + ''
   return n[1] ? n : '0' + n
 }
-
-// transform json to querystring when the url without '?'
-/*
-* @param {Object} 
-* @return {String} '?key1=val1?key2=val2...' 
-*/
+ 
+/** 
+ * @param {Object} 
+ * @return {String} transform json to querystring when the url without '?'
+ */
 const json2url = json => {
   return '?' + Object.keys(json).map(key => `${key}=${json[key]}`).join('&')
 }
 
-// transform querystring to json when the url with '?'
-/*
-* @param {String} '?key1=val1?key2=val2...' 
-* @return {Object} 
-*/
+/** 
+ * @param {String} '?key1=val1?key2=val2...' 
+ * @return {Object} transform querystring to json when the url with '?'
+ */
 const url2json = qs => {
   let result = {}
   let temp = qs.substring(1).split('&')
@@ -51,14 +49,20 @@ const url2json = qs => {
   return result
 }
 
-// check cellphone number
-// the number section 13 14 15 16 17 18
-/*
-* @param {Number} 13189001111
-* @return {Boolean}  
-*/
+/** 
+ * @param {Number} 
+ * @return {Boolean}  true if the phone is start with 13 14 15 16 17 18 and is 11
+ */
 const checkCellphone = num => {
   return /^1[345678]\d{9}$/.test(num) ? true : false
+}
+
+/**
+ * @param {Object}
+ * @return {Boolean} true if the Object is an Array, otherwise false
+ */
+const isArray = (val) => {
+  Object.prototype.toString.call(val) === '[object Array]'
 }
 
 
