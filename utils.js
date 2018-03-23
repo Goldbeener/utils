@@ -1,3 +1,4 @@
+'use strict'
 
 /** 
  * @param {Number|String}
@@ -66,7 +67,7 @@ const isArray = (val) => {
 }
 
 
-module.export = {
+module.exports = {
   formatTime,
   paddingNum,
   json2url,
