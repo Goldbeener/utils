@@ -51,7 +51,7 @@ const url2json = qs => {
 
 /** 
  * @param {Number} 
- * @return {Boolean}  true if the phone is start with 13 14 15 16 17 18 and is 11
+ * @return {Boolean}  true if the phone is start with 13 14 15 16 17 18 and the length is 11
  */
 const checkCellphone = num => {
   return /^1[345678]\d{9}$/.test(num) ? true : false
@@ -70,5 +70,6 @@ module.export = {
   formatTime,
   paddingNum,
   json2url,
-  checkCellphone
+  checkCellphone,
+  isArray
 }
