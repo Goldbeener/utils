@@ -18,6 +18,18 @@ const formatTime = (stamp) => {
   return [y, m, d].map(paddingNum).join('.') + [h, M, s].map(paddingNum).join(':')
 }
 
+/**
+ * get the last day of current month
+ * @param {}
+ * @returns {Number} 
+ */
+const getLastDay = () => {
+  let date = new Date()
+  let y = date.getFullYear() + 1
+  let m = date.getMonth()
+
+  return new Date(y, m, 0).getDate()
+}
 
 /**
  * @param {Number} 9
