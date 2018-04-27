@@ -78,11 +78,25 @@ const isArray = (val) => {
   Object.prototype.toString.call(val) === '[object Array]'
 }
 
+/**
+ * @param {}
+ * 
+ * @returns {Boolean} true if the browser can support the async syntax, otherwise false
+ */
+const asyncDetect = () => {
+  try {
+    new Function('async function test () {}')()
+  } catch (err) {
+    return false
+  }
+  return true
+}
 
 module.exports = {
   formatTime,
   paddingNum,
   json2url,
   checkCellphone,
-  isArray
+  isArray,
+  asyncDetect
 }

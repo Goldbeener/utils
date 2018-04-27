@@ -8,3 +8,4 @@ some utility functions
 + Url2json
 + CheckCellphone
 + isArray
++ asyncDetect 
