@@ -9,3 +9,6 @@ some utility functions
 + CheckCellphone
 + isArray
 + asyncDetect 
+
++ array
+    + intersectionObjects
